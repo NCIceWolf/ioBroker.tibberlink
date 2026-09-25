@@ -110,7 +110,7 @@ class TibberLocal extends projectUtils_js_1.ProjectUtils {
         const auth = `Basic ${Buffer.from(`admin:${this.adapter.config.PulseList[pulse].tibberBridgePassword}`).toString("base64")}`;
         const options = {
             hostname: this.adapter.config.PulseList[pulse].tibberBridgeUrl,
-            path: `/metrics.json?node_id=${this.adapter.config.PulseList[pulse].tibberPulseLocalNodeId}`,
+            path: `/node_metrics.json?node_id=${this.adapter.config.PulseList[pulse].tibberPulseLocalNodeId}`,
             method: "GET",
             headers: {
                 Authorization: auth,
@@ -218,7 +218,7 @@ class TibberLocal extends projectUtils_js_1.ProjectUtils {
         const auth = `Basic ${Buffer.from(`admin:${this.adapter.config.PulseList[pulse].tibberBridgePassword}`).toString("base64")}`;
         const options = {
             method: "GET",
-            url: `http://${this.adapter.config.PulseList[pulse].tibberBridgeUrl}/data.json?node_id=${this.adapter.config.PulseList[pulse].tibberPulseLocalNodeId}`,
+            url: `http://${this.adapter.config.PulseList[pulse].tibberBridgeUrl}/node_data.json?node_id=${this.adapter.config.PulseList[pulse].tibberPulseLocalNodeId}`,
             headers: {
                 Authorization: auth,
             },
